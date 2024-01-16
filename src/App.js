@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import Textbox from './components/Textbox';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -22,13 +22,17 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Navbar title="App" mode={mode} toggleMode={toggleMode} about="About" login="Login" home="Home" />
+      <Textbox heading="Enter the text" mode={mode} />
+
+
+      {/* <Router>
         <Navbar title="App" mode={mode} toggleMode={toggleMode} about="About" login="Login" home="Home" />
         <Routes>
           <Route exact path="/about" element={<About />} />
           <Route exact path="/" element={<Textbox heading="Enter the text" mode={mode} />} />
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }
